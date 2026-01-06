@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Microsoft Power Automate Capabilities</title>
+  <title>SharePoint Automation Home Blueprint</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,262 +15,400 @@
 <body>
   <header class="hero">
     <div class="hero__content">
-      <p class="eyebrow">Automation overview</p>
-      <h1>Build smarter workflows with Microsoft Power Automate</h1>
+      <p class="eyebrow">Automation Home (SharePoint Online)</p>
+      <h1>RPA landing experience for business users</h1>
       <p class="lede">
-        Explore the capabilities, connectors, and bot-building tools that let you automate
-        routine tasks, orchestrate approvals, and connect data across Microsoft 365 and your
-        favorite apps.
+        Build a modern SharePoint page that routes users through goal-based wizards, provisions
+        Power Automate flows, and captures assisted requests with governance baked in.
       </p>
       <div class="hero__actions">
-        <button class="btn btn--primary">Start a cloud flow</button>
-        <button class="btn btn--ghost">Design a bot</button>
+        <button class="btn btn--primary">Start with a goal</button>
+        <button class="btn btn--ghost">Browse templates</button>
       </div>
       <ul class="hero__stats">
-        <li><strong>900+</strong><span>prebuilt connectors</span></li>
-        <li><strong>1M+</strong><span>daily runs per tenant</span></li>
-        <li><strong>99.9%</strong><span>platform uptime</span></li>
+        <li><strong>6–8</strong><span>curated templates per audience</span></li>
+        <li><strong>2 paths</strong><span>Self-serve vs assisted</span></li>
+        <li><strong>0</strong><span>Premium connectors by default</span></li>
       </ul>
     </div>
     <div class="hero__panel">
       <div class="panel-card">
-        <p class="panel-card__label">Example flow</p>
-        <h2>Route high-priority messages</h2>
-        <ol>
-          <li>Trigger on Teams message with "urgent" tag</li>
-          <li>Use AI Builder to extract owner + due date</li>
-          <li>Create Planner task and post in channel</li>
-        </ol>
-        <div class="chip">Power Virtual Agents ready</div>
+        <p class="panel-card__label">Goal-first navigation</p>
+        <h2>Cards: Notify, Approve, Sync, Intake/Triage, Remind/Escalate, Not sure</h2>
+        <p class="small">
+          Deep link each card to the embedded Power Apps canvas app with <code>?GoalCategory=Notify</code>
+          (or similar) so the wizard starts with the right defaults.
+        </p>
+        <div class="chip">Governance hook: ownership + logging captured at submit</div>
       </div>
       <div class="panel-card">
-        <p class="panel-card__label">Bot capability</p>
-        <h2>Conversational automation</h2>
-        <p>
-          Combine Power Virtual Agents with Power Automate to let users trigger flows and
-          retrieve data through natural language prompts.
-        </p>
+        <p class="panel-card__label">Non-functional</p>
+        <p class="small">Accessible colors, large buttons, business language (avoid connector jargon). Warn and force assisted path when PII/PHI or premium connectors appear.</p>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section" id="capabilities">
+    <section class="section" id="layout">
       <div class="section__header">
-        <p class="eyebrow">Core capabilities</p>
-        <h2>Everything you need to build resilient automations</h2>
-        <p class="lede">
-          Mix low-code design, AI-assisted builders, and governance controls to deliver
-          automations that scale with your organization.
-        </p>
+        <p class="eyebrow">Page layout</p>
+        <h2>Automation Home - SharePoint page build</h2>
+        <p class="lede">Add modern web parts in this order to keep business users oriented and governed.</p>
       </div>
       <div class="grid grid--cards">
         <article class="card">
-          <div class="icon">⚡</div>
-          <h3>Cloud flows</h3>
-          <p>Trigger actions with events, schedules, or webhook calls and orchestrate logic with conditions, loops, and approvals.</p>
+          <h3>Section 1: Hero</h3>
           <ul>
-            <li>Event-based triggers for Microsoft 365, Dynamics 365, and more</li>
-            <li>Branching, parallelism, and retries</li>
-            <li>Adaptive cards to collect responses</li>
+            <li>Hero web part with headline "Start with an automation goal".</li>
+            <li>Primary CTA: <strong>Start with a goal</strong> (opens embedded Power Apps).</li>
+            <li>Secondary CTA: <strong>Browse templates</strong> (links to AutomationTemplates list view).</li>
           </ul>
         </article>
         <article class="card">
-          <div class="icon">🤖</div>
-          <h3>Desktop &amp; RPA</h3>
-          <p>Automate legacy systems using attended or unattended robots with rich UI automation and error handling.</p>
+          <h3>Section 2: Goal cards</h3>
           <ul>
-            <li>Recorders for desktop and web apps</li>
-            <li>Centralized queueing and monitoring</li>
-            <li>Secure credential management</li>
+            <li>Use Quick Links web part or app buttons.</li>
+            <li>Targets: Notify, Approve, Sync, Intake/Triage, Remind/Escalate, Not sure.</li>
+            <li>Each link: Power Apps URL + <code>GoalCategory</code> query param.</li>
           </ul>
         </article>
         <article class="card">
-          <div class="icon">🧠</div>
-          <h3>AI Builder</h3>
-          <p>Enrich flows with prebuilt AI models for sentiment, forms, document processing, and GPT-based prompts.</p>
+          <h3>Section 3: Popular templates</h3>
           <ul>
-            <li>Extract data from emails, PDFs, and images</li>
-            <li>Generative actions with connectors for Azure OpenAI</li>
-            <li>Automated retraining and versioning</li>
+            <li>List web part bound to <strong>AutomationTemplates</strong>.</li>
+            <li>Filter Active=Yes, sort by SortOrder, limit to 8.</li>
+            <li>Show columns: Title, GoalCategory, EstimatedSetupTimeMins, Complexity, PremiumRequired.</li>
           </ul>
         </article>
         <article class="card">
-          <div class="icon">🛡️</div>
-          <h3>Governance</h3>
-          <p>Manage environments, data-loss prevention policies, and solution lifecycle with built-in analytics and alerts.</p>
+          <h3>Section 4: Governance &amp; Help</h3>
           <ul>
-            <li>Environment isolation for dev/test/prod</li>
-            <li>Audit logs and usage insights</li>
-            <li>Deployment pipelines with solutions</li>
+            <li>Links: Policies, data handling (PII/PHI), office hours, contact group/Teams channel.</li>
+            <li>Add a List view web part for <strong>My Requests</strong> (AutomationRequests filtered to [Me]).</li>
+            <li>Include FAQs: “When is premium required?”, “How do I get help?”</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section class="section" id="integrations">
+    <section class="section" id="lists">
       <div class="section__header">
-        <p class="eyebrow">Connectors</p>
-        <h2>Integrations for every workflow</h2>
-        <p class="lede">
-          Filter by category to see how Power Automate plugs into your existing stack.
-        </p>
-        <div class="filters" role="tablist" aria-label="Integration categories">
-          <button class="filter-btn is-active" data-filter="all" role="tab">All</button>
-          <button class="filter-btn" data-filter="productivity" role="tab">Productivity</button>
-          <button class="filter-btn" data-filter="data" role="tab">Data</button>
-          <button class="filter-btn" data-filter="communication" role="tab">Communication</button>
-          <button class="filter-btn" data-filter="devops" role="tab">DevOps</button>
+        <p class="eyebrow">SharePoint Lists</p>
+        <h2>Schemas, sample items, and views</h2>
+        <p class="lede">Create these lists in the Automation Home site. Default modern forms are fine; enforce choices for governance.</p>
+      </div>
+
+      <div class="card card--table">
+        <h3>AutomationTemplates (catalog)</h3>
+        <p class="small">Columns: Title, GoalCategory (Notify, Approve, Sync, Intake, Remind, Other), Description, EstimatedSetupTimeMins, Complexity (Self-Serve/Assisted), ConnectorsUsed (multi-choice: SharePoint, Outlook, Teams, Slack, Forms, OneDrive, Dataverse), PremiumRequired (Yes/No), TemplateIdOrLink, Active (Yes/No), SortOrder, IconName.</p>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>GoalCategory</th>
+                <th>Complexity</th>
+                <th>ConnectorsUsed</th>
+                <th>PremiumRequired</th>
+                <th>TemplateIdOrLink</th>
+                <th>IconName</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Urgent document alert</td><td>Notify</td><td>Self-Serve</td><td>SharePoint; Outlook; Teams</td><td>No</td><td>https://aka.ms/flow-sharepoint-notify</td><td>Bell</td></tr>
+              <tr><td>Library upload approval</td><td>Approve</td><td>Assisted</td><td>SharePoint; Outlook</td><td>No</td><td>https://aka.ms/flow-library-approval</td><td>CheckCircle</td></tr>
+              <tr><td>Forms to list sync</td><td>Sync</td><td>Self-Serve</td><td>Forms; SharePoint</td><td>No</td><td>https://aka.ms/flow-forms-sync</td><td>Sync</td></tr>
+              <tr><td>Intake triage to Teams</td><td>Intake</td><td>Self-Serve</td><td>Forms; Teams</td><td>No</td><td>https://aka.ms/flow-intake-teams</td><td>Chat</td></tr>
+              <tr><td>Reminder: pending approvals</td><td>Remind</td><td>Self-Serve</td><td>SharePoint; Outlook</td><td>No</td><td>https://aka.ms/flow-reminder</td><td>Clock</td></tr>
+              <tr><td>Status digest (weekly)</td><td>Notify</td><td>Assisted</td><td>SharePoint; Teams</td><td>No</td><td>https://aka.ms/flow-digest</td><td>Megaphone</td></tr>
+              <tr><td>Data sensitivity alert</td><td>Remind</td><td>Assisted</td><td>SharePoint; Teams; Outlook</td><td>No</td><td>https://aka.ms/flow-sensitive</td><td>Shield</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      <div class="grid grid--integrations" id="integrationGrid">
-        <article class="integration-card" data-category="productivity">
-          <div class="logo">M365</div>
-          <h3>Microsoft 365</h3>
-          <p>Automate Outlook, Teams, and SharePoint with triggers for messages, files, and calendar updates.</p>
-          <ul>
-            <li>Post adaptive cards to Teams</li>
-            <li>Create lists and document libraries</li>
-            <li>Sync events to Planner or To Do</li>
-          </ul>
-        </article>
-        <article class="integration-card" data-category="data">
-          <div class="logo">SQL</div>
-          <h3>SQL &amp; Dataverse</h3>
-          <p>Query, insert, and update records across Azure SQL, on-premises gateways, and Dataverse tables.</p>
-          <ul>
-            <li>Row-level triggers and actions</li>
-            <li>Automated approval routing</li>
-            <li>Data-loss prevention policies</li>
-          </ul>
-        </article>
-        <article class="integration-card" data-category="communication">
-          <div class="logo">MSG</div>
-          <h3>Outreach &amp; notifications</h3>
-          <p>Send emails, push notifications, and SMS with Outlook, Twilio, Power Apps Push, and more.</p>
-          <ul>
-            <li>Conditionally send alerts by severity</li>
-            <li>Template-based messaging</li>
-            <li>Deep links to Power Apps</li>
-          </ul>
-        </article>
-        <article class="integration-card" data-category="productivity">
-          <div class="logo">SP</div>
-          <h3>SharePoint + OneDrive</h3>
-          <p>Watch libraries for new documents, kick off approvals, and archive results to long-term storage.</p>
-          <ul>
-            <li>Version-aware file processing</li>
-            <li>Metadata extraction with AI Builder</li>
-            <li>Route approvals to Teams channels</li>
-          </ul>
-        </article>
-        <article class="integration-card" data-category="devops">
-          <div class="logo">ADO</div>
-          <h3>Azure DevOps &amp; GitHub</h3>
-          <p>Automate work item creation, pull request checks, and deployment notifications for your engineering teams.</p>
-          <ul>
-            <li>Auto-assign bugs by service area</li>
-            <li>Deploy with environment gates</li>
-            <li>Post release notes to Teams</li>
-          </ul>
-        </article>
-        <article class="integration-card" data-category="data">
-          <div class="logo">BI</div>
-          <h3>Power BI &amp; Excel</h3>
-          <p>Refresh datasets, append rows, and react to data-driven alerts to keep dashboards current.</p>
-          <ul>
-            <li>Dataset refresh orchestration</li>
-            <li>Row-level inserts with templates</li>
-            <li>Trigger on data alerts</li>
-          </ul>
-        </article>
-        <article class="integration-card" data-category="communication">
-          <div class="logo">BOT</div>
-          <h3>Power Virtual Agents</h3>
-          <p>Let bots call flows to retrieve answers, create records, or start approvals during conversations.</p>
-          <ul>
-            <li>Pass context from bot topics</li>
-            <li>Return adaptive card responses</li>
-            <li>Support for multilingual bots</li>
-          </ul>
-        </article>
-        <article class="integration-card" data-category="devops">
-          <div class="logo">ALM</div>
-          <h3>ALM &amp; monitoring</h3>
-          <p>Use Azure Monitor, Application Insights, and the Admin Connector to track runs and enforce policies.</p>
-          <ul>
-            <li>Automated health alerts</li>
-            <li>Export run history to Log Analytics</li>
-            <li>Rotate secrets with Key Vault</li>
-          </ul>
-        </article>
+
+      <div class="card card--table">
+        <h3>AutomationRequests (intake)</h3>
+        <p class="small">Columns: Title (auto "{GoalCategory} - {RequestedBy} - {ShortName}"), RequestedBy (person), GoalCategory (choice), TriggerType (choice: SharePointFile, SharePointListItem, FormSubmission, EmailReceived, Schedule), TriggerDetailsJson (multi-line JSON), NotificationChannels (multi-choice: OutlookEmail, Teams, Slack, Mobile, LogToList), RecipientDetailsJson, RulesJson, DataSensitivity (None, Internal, PII, PHI), BusinessHoursOnly (Yes/No), ApprovalRequired (Yes/No), RequestedDueDate (date), ComplexityScore (number), RoutingDecision (Self-Serve, Assisted, NeedsReview), Status (Draft, Submitted, In Review, In Build, Completed, Rejected), ProvisionedFlowLink (hyperlink), Notes, LastUpdated (date/time).</p>
+        <p class="small">Views: <strong>My Requests</strong> (RequestedBy=[Me]); <strong>Queue - Team</strong> (Status is Submitted/In Review/In Build).</p>
+      </div>
+
+      <div class="card card--table">
+        <h3>AutomationLogs (optional)</h3>
+        <p class="small">Columns: AutomationRequest (lookup), EventType (Created, Updated, Provisioned, Failed, Approved), Message, Timestamp, DetailsJson.</p>
       </div>
     </section>
 
-    <section class="section" id="bot-builder">
+    <section class="section" id="powerapps">
       <div class="section__header">
-        <p class="eyebrow">Bot builder</p>
-        <h2>Build a Power Virtual Agents bot powered by flows</h2>
-        <p class="lede">Follow this blueprint to deliver a reliable bot with connected automations.</p>
+        <p class="eyebrow">Power Apps</p>
+        <h2>Embedded canvas app wizard (Notify goal end-to-end)</h2>
+        <p class="lede">Use a tablet/landscape layout for larger controls. Accept <code>Param("GoalCategory")</code> to preselect the goal.</p>
       </div>
-      <div class="timeline">
-        <div class="timeline__item">
-          <div class="timeline__step">1</div>
-          <div>
-            <h3>Design topics and triggers</h3>
-            <p>Create greeting, escalation, and FAQ topics. Add trigger phrases and entity recognition to guide users.</p>
-          </div>
-        </div>
-        <div class="timeline__item">
-          <div class="timeline__step">2</div>
-          <div>
-            <h3>Connect to flows</h3>
-            <p>Use the Power Automate action within your bot to call cloud flows that retrieve or update data.</p>
-          </div>
-        </div>
-        <div class="timeline__item">
-          <div class="timeline__step">3</div>
-          <div>
-            <h3>Secure with environments</h3>
-            <p>Choose the correct environment for production and apply data-loss prevention policies to connectors.</p>
-          </div>
-        </div>
-        <div class="timeline__item">
-          <div class="timeline__step">4</div>
-          <div>
-            <h3>Publish &amp; monitor</h3>
-            <p>Publish your bot, embed it in Teams, and monitor conversations, flow runs, and user satisfaction.</p>
-          </div>
-        </div>
+      <div class="grid grid--cards">
+        <article class="card">
+          <h3>Control tree (Notify)</h3>
+          <ul>
+            <li>Screen <strong>scrNotify</strong></li>
+            <li>Header: lblGoalTitle, lblGoalDesc</li>
+            <li>Steps container: galSteps (vertical, shows step names + completion)</li>
+            <li>Form area: five containers (Step1..Step5)</li>
+            <li>Buttons: btnPrev, btnNext, btnSubmit (visible on Step5)</li>
+            <li>Context variables: <code>locStep</code> (1-5), <code>locPayload</code> (record)</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Key formulas</h3>
+          <pre><code>// OnStart
+Set(varGoal, Coalesce(Param("GoalCategory"), "Notify"));
+Set(locStep, 1);
+UpdateContext({locPayload: {
+    GoalCategory: varGoal,
+    TriggerType: Blank(),
+    TriggerDetails: {},
+    NotificationChannels: [],
+    Recipients: [],
+    Rules: {
+        BusinessHoursOnly: false,
+        ApprovalRequired: false,
+        LogToList: true,
+        PremiumRequired: false,
+        ConditionCount: 0
+    },
+    DataSensitivity: "None"
+}});
+
+// OnVisible of scrNotify
+If(!IsBlank(varGoal), ResetForm(frmStep1));
+
+// Step 1 selections
+// OnChange of Trigger dropdowns
+UpdateContext({locPayload: Patch(locPayload, {
+    TriggerType: drpTrigger.Selected.Value,
+    TriggerDetails: {
+        Site: txtSite.Text,
+        ListOrLibrary: txtList.Text,
+        Event: drpEvent.Selected.Value
+    }
+})});
+
+// Step 2 channels
+UpdateContext({locPayload: Patch(locPayload, {
+    NotificationChannels: chkChannels.SelectedItems.Value
+})});
+
+// Step 3 recipients
+UpdateContext({locPayload: Patch(locPayload, {
+    Recipients: colPeople.SelectedItems
+})});
+
+// Step 4 rules
+UpdateContext({locPayload: Patch(locPayload, {
+    DataSensitivity: drpSensitivity.Selected.Value,
+    Rules: Patch(locPayload.Rules, {
+        BusinessHoursOnly: togHours.Value,
+        ApprovalRequired: togApproval.Value,
+        LogToList: togLog.Value,
+        ConditionCount: Value(txtConditions.Text)
+    })
+})});
+
+// Complexity calculation (on Next from Step4)
+Set(locComplexity,
+    If(locPayload.DataSensitivity in ["PII","PHI"], 999,
+    If(locPayload.Rules.ApprovalRequired, 2, 0) +
+    If("Slack" in locPayload.NotificationChannels, 2, 0) +
+    If(locPayload.Rules.ConditionCount > 3, 2, 0)));
+Set(locRouting,
+    If(locPayload.DataSensitivity in ["PII","PHI"], "Assisted",
+    If(locPayload.Rules.PremiumRequired, "NeedsReview",
+    If(locComplexity <= 2, "Self-Serve", "Assisted"))));
+
+// Submit (btnSubmit.OnSelect)
+Patch(AutomationRequests,
+    Defaults(AutomationRequests),
+    {
+        Title: Concatenate(locPayload.GoalCategory, " - ", User().FullName, " - Notify"),
+        RequestedBy: User(),
+        GoalCategory: locPayload.GoalCategory,
+        TriggerType: locPayload.TriggerType,
+        TriggerDetailsJson: JSON(locPayload.TriggerDetails, JSONFormat.Compact),
+        NotificationChannels: locPayload.NotificationChannels,
+        RecipientDetailsJson: JSON(locPayload.Recipients, JSONFormat.Compact),
+        RulesJson: JSON(locPayload.Rules, JSONFormat.Compact),
+        DataSensitivity: locPayload.DataSensitivity,
+        BusinessHoursOnly: locPayload.Rules.BusinessHoursOnly,
+        ApprovalRequired: locPayload.Rules.ApprovalRequired,
+        ComplexityScore: locComplexity,
+        RoutingDecision: locRouting,
+        Status: "Submitted",
+        LastUpdated: Now()
+    }
+);
+Notify("Request submitted", NotificationType.Success);
+Navigate(scrThanks, ScreenTransition.Fade);
+</code></pre>
+        </article>
+        <article class="card">
+          <h3>Experience tips</h3>
+          <ul>
+            <li>Show a warning bar if DataSensitivity = PII/PHI: "We will route this to assisted support."</li>
+            <li>Disable channels that imply premium unless user confirms (e.g., Slack checkbox adds PremiumRequired flag).</li>
+            <li>Use Progress indicator (galSteps) with Step names: Trigger &gt; Channels &gt; Recipients &gt; Rules &gt; Review.</li>
+            <li>On Review, render JSON snippets for transparency and allow editing previous steps.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
-    <section class="section section--highlight">
-      <div class="highlight">
-        <div>
-          <p class="eyebrow">Get started quickly</p>
-          <h2>Template ideas for your next automation</h2>
-          <p class="lede">Start from proven scenarios and adapt them to your needs.</p>
-        </div>
-        <div class="chips">
-          <div class="chip chip--light">Auto-assign Teams messages to owners</div>
-          <div class="chip chip--light">Archive approved documents to SharePoint</div>
-          <div class="chip chip--light">Post release notes to Teams after deployments</div>
-          <div class="chip chip--light">Sync survey results to Dataverse with sentiment</div>
-          <div class="chip chip--light">Trigger RPA desktop script from chatbot</div>
-        </div>
+    <section class="section" id="flows">
+      <div class="section__header">
+        <p class="eyebrow">Power Automate</p>
+        <h2>Flow designs (pseudo)</h2>
+        <p class="lede">All flows use standard connectors (SharePoint, Outlook, Teams). Flag Slack or others as premium and route to NeedsReview.</p>
+      </div>
+      <div class="grid grid--cards">
+        <article class="card">
+          <h3>Flow 1: Handle Automation Request Submission</h3>
+          <ol>
+            <li>Trigger: When an item is created (AutomationRequests) AND Status = Submitted.</li>
+            <li>Parse JSON fields: <em>TriggerDetailsJson</em>, <em>RecipientDetailsJson</em>, <em>RulesJson</em>.</li>
+            <li>RoutingDecision (if blank): same rules as app.</li>
+            <li>If RoutingDecision = Self-Serve → call child flow “Self-Serve Notify - Provision or Build Spec”. Update Status to In Build, then Completed when link available.</li>
+            <li>If RoutingDecision = Assisted or NeedsReview → Post adaptive card to Teams channel + email automation team; set Status = In Review.</li>
+            <li>Write AutomationLogs event for Created/Updated/Provisioned/Failed.</li>
+          </ol>
+          <p class="small"><strong>Expressions:</strong> <code>if(equals(items('Apply_to_each')?['DataSensitivity'], 'PHI'), 'Assisted', ...)</code>. Use <code>json(triggerOutputs()?['body/TriggerDetailsJson'])</code> to parse.</p>
+        </article>
+        <article class="card">
+          <h3>Flow 2: Self-Serve Notify - Provision or Build Spec</h3>
+          <ol>
+            <li>Input: RequestId (from parent).</li>
+            <li>Get item; build dynamic flow name: <code>concat('Notify - ', outputs('Get_item')?['body/RequestedBy/DisplayName'])</code>.</li>
+            <li>Option A (preferred): use Solution template with environment variables; call “Create flow from template” (Power Automate Management connector) if allowed.</li>
+            <li>Option B: generate “Flow Build Sheet” HTML file in Site Assets summarizing trigger, actions, recipients, and governance. Link file URL back to ProvisionedFlowLink; set Status=In Build.</li>
+            <li>Post confirmation to requester via Teams chat or email.</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h3>Flow 3: Failure Handler / Retry</h3>
+          <ul>
+            <li>Trigger on failed child flow runs (configure in parent).</li>
+            <li>Update request Status = Failed, log error details.</li>
+            <li>Notify automation support channel with link to run history.</li>
+            <li>Optional: schedule retry with exponential delay if failure is transient.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="json">
+      <div class="section__header">
+        <p class="eyebrow">Payload examples</p>
+        <h2>JSON stored in AutomationRequests</h2>
+        <p class="lede">Use compact JSON to stay under column limits; include only the fields you display in Review step.</p>
+      </div>
+      <div class="grid grid--cards">
+        <article class="card">
+          <h3>TriggerDetailsJson</h3>
+          <pre><code>{
+  "Site": "https://contoso.sharepoint.com/sites/Docs",
+  "ListOrLibrary": "Policies",
+  "Event": "Created",
+  "Folder": "/Urgent",
+  "FileTypes": ["docx", "pdf"]
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>RecipientDetailsJson</h3>
+          <pre><code>{
+  "Primary": [
+    {"DisplayName": "Adele Vance", "Email": "adelev@contoso.com"}
+  ],
+  "TeamsChannel": {
+    "TeamId": "Guid-Here",
+    "ChannelId": "19:channel@thread"
+  },
+  "Escalation": []
+}</code></pre>
+        </article>
+        <article class="card">
+          <h3>RulesJson</h3>
+          <pre><code>{
+  "BusinessHoursOnly": true,
+  "ApprovalRequired": false,
+  "LogToList": true,
+  "ConditionCount": 2,
+  "PremiumRequired": false,
+  "DataSensitivity": "Internal"
+}</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="templates">
+      <div class="section__header">
+        <p class="eyebrow">Template copy</p>
+        <h2>Popular templates (curated, max 8)</h2>
+        <p class="lede">Outcome-first descriptions for the landing page and list web part.</p>
+      </div>
+      <div class="grid grid--cards">
+        <article class="card"><h3>Urgent document alert</h3><p>Notify owners in Outlook and Teams when critical files land in a library.</p><p class="small">Setup: ~10 mins · Self-Serve · SharePoint + Teams</p></article>
+        <article class="card"><h3>Library upload approval</h3><p>Require manager sign-off before documents become visible; auto-file approved versions.</p><p class="small">Setup: ~20 mins · Assisted · SharePoint + Outlook</p></article>
+        <article class="card"><h3>Forms to list sync</h3><p>Capture survey results from Microsoft Forms into a SharePoint list with attachments.</p><p class="small">Setup: ~8 mins · Self-Serve · Forms + SharePoint</p></article>
+        <article class="card"><h3>Intake triage to Teams</h3><p>Route new requests to a Teams channel with priority tags and owner mentions.</p><p class="small">Setup: ~12 mins · Self-Serve · Forms + Teams</p></article>
+        <article class="card"><h3>Reminder: pending approvals</h3><p>Send nudges every weekday for items stuck in approval beyond 2 days.</p><p class="small">Setup: ~10 mins · Self-Serve · SharePoint + Outlook</p></article>
+        <article class="card"><h3>Status digest (weekly)</h3><p>Compile weekly status from list items and post to Teams as a card.</p><p class="small">Setup: ~15 mins · Assisted · SharePoint + Teams</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="copy">
+      <div class="section__header">
+        <p class="eyebrow">Landing page copy</p>
+        <h2>Headlines, card text, and tooltips</h2>
+        <p class="lede">Use plain language, avoid connector jargon on the main page.</p>
+      </div>
+      <div class="grid grid--cards">
+        <article class="card">
+          <h3>Hero</h3>
+          <ul>
+            <li><strong>Headline:</strong> "Start with what you need to happen, we’ll build the automation."</li>
+            <li><strong>Subtext:</strong> "Pick a goal, answer a few guided questions, and we’ll create a flow or route it to the automation team."</li>
+            <li><strong>CTA 1:</strong> Start with a goal (opens app) · <strong>CTA 2:</strong> Browse templates (list web part).</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Goal cards</h3>
+          <ul>
+            <li><strong>Notify:</strong> "Alert people when files or requests arrive."</li>
+            <li><strong>Approve:</strong> "Get sign-off before work continues."</li>
+            <li><strong>Sync:</strong> "Keep lists and forms aligned automatically."</li>
+            <li><strong>Intake/Triage:</strong> "Capture requests and route them to the right team."</li>
+            <li><strong>Remind/Escalate:</strong> "Nudge owners when deadlines approach."</li>
+            <li><strong>Not sure:</strong> "Tell us the outcome you want— we’ll guide you."</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Tooltips &amp; governance</h3>
+          <ul>
+            <li>"Selecting PII/PHI? We’ll route to the assisted path for review."</li>
+            <li>"Premium connector requested (e.g., Slack)? Expect a quick review before build."</li>
+            <li>"All submissions are logged for audit. You can track status in My Requests."</li>
+            <li>"Need help? Visit office hours or post in the Automation Team channel."</li>
+          </ul>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div>
-      <h2>Ready to automate?</h2>
-      <p>Sign in to Power Automate to build flows, manage connectors, and deploy bots.</p>
+      <h2>Ready to publish your Automation Home?</h2>
+      <p>Embed the Power Apps wizard, add the list web parts, and share the page with your business users.</p>
     </div>
     <div class="footer__actions">
-      <button class="btn btn--primary">Open Power Automate</button>
-      <button class="btn btn--ghost">Browse templates</button>
+      <button class="btn btn--primary">Open the wizard</button>
+      <button class="btn btn--ghost">View My Requests</button>
     </div>
   </footer>
 
