@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft Power Automate Capabilities</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Automation overview</p>
+      <h1>Build smarter workflows with Microsoft Power Automate</h1>
+      <p class="lede">
+        Explore the capabilities, connectors, and bot-building tools that let you automate
+        routine tasks, orchestrate approvals, and connect data across Microsoft 365 and your
+        favorite apps.
+      </p>
+      <div class="hero__actions">
+        <button class="btn btn--primary">Start a cloud flow</button>
+        <button class="btn btn--ghost">Design a bot</button>
+      </div>
+      <ul class="hero__stats">
+        <li><strong>900+</strong><span>prebuilt connectors</span></li>
+        <li><strong>1M+</strong><span>daily runs per tenant</span></li>
+        <li><strong>99.9%</strong><span>platform uptime</span></li>
+      </ul>
+    </div>
+    <div class="hero__panel">
+      <div class="panel-card">
+        <p class="panel-card__label">Example flow</p>
+        <h2>Route high-priority messages</h2>
+        <ol>
+          <li>Trigger on Teams message with "urgent" tag</li>
+          <li>Use AI Builder to extract owner + due date</li>
+          <li>Create Planner task and post in channel</li>
+        </ol>
+        <div class="chip">Power Virtual Agents ready</div>
+      </div>
+      <div class="panel-card">
+        <p class="panel-card__label">Bot capability</p>
+        <h2>Conversational automation</h2>
+        <p>
+          Combine Power Virtual Agents with Power Automate to let users trigger flows and
+          retrieve data through natural language prompts.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="capabilities">
+      <div class="section__header">
+        <p class="eyebrow">Core capabilities</p>
+        <h2>Everything you need to build resilient automations</h2>
+        <p class="lede">
+          Mix low-code design, AI-assisted builders, and governance controls to deliver
+          automations that scale with your organization.
+        </p>
+      </div>
+      <div class="grid grid--cards">
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>Cloud flows</h3>
+          <p>Trigger actions with events, schedules, or webhook calls and orchestrate logic with conditions, loops, and approvals.</p>
+          <ul>
+            <li>Event-based triggers for Microsoft 365, Dynamics 365, and more</li>
+            <li>Branching, parallelism, and retries</li>
+            <li>Adaptive cards to collect responses</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon">🤖</div>
+          <h3>Desktop &amp; RPA</h3>
+          <p>Automate legacy systems using attended or unattended robots with rich UI automation and error handling.</p>
+          <ul>
+            <li>Recorders for desktop and web apps</li>
+            <li>Centralized queueing and monitoring</li>
+            <li>Secure credential management</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon">🧠</div>
+          <h3>AI Builder</h3>
+          <p>Enrich flows with prebuilt AI models for sentiment, forms, document processing, and GPT-based prompts.</p>
+          <ul>
+            <li>Extract data from emails, PDFs, and images</li>
+            <li>Generative actions with connectors for Azure OpenAI</li>
+            <li>Automated retraining and versioning</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon">🛡️</div>
+          <h3>Governance</h3>
+          <p>Manage environments, data-loss prevention policies, and solution lifecycle with built-in analytics and alerts.</p>
+          <ul>
+            <li>Environment isolation for dev/test/prod</li>
+            <li>Audit logs and usage insights</li>
+            <li>Deployment pipelines with solutions</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="integrations">
+      <div class="section__header">
+        <p class="eyebrow">Connectors</p>
+        <h2>Integrations for every workflow</h2>
+        <p class="lede">
+          Filter by category to see how Power Automate plugs into your existing stack.
+        </p>
+        <div class="filters" role="tablist" aria-label="Integration categories">
+          <button class="filter-btn is-active" data-filter="all" role="tab">All</button>
+          <button class="filter-btn" data-filter="productivity" role="tab">Productivity</button>
+          <button class="filter-btn" data-filter="data" role="tab">Data</button>
+          <button class="filter-btn" data-filter="communication" role="tab">Communication</button>
+          <button class="filter-btn" data-filter="devops" role="tab">DevOps</button>
+        </div>
+      </div>
+      <div class="grid grid--integrations" id="integrationGrid">
+        <article class="integration-card" data-category="productivity">
+          <div class="logo">M365</div>
+          <h3>Microsoft 365</h3>
+          <p>Automate Outlook, Teams, and SharePoint with triggers for messages, files, and calendar updates.</p>
+          <ul>
+            <li>Post adaptive cards to Teams</li>
+            <li>Create lists and document libraries</li>
+            <li>Sync events to Planner or To Do</li>
+          </ul>
+        </article>
+        <article class="integration-card" data-category="data">
+          <div class="logo">SQL</div>
+          <h3>SQL &amp; Dataverse</h3>
+          <p>Query, insert, and update records across Azure SQL, on-premises gateways, and Dataverse tables.</p>
+          <ul>
+            <li>Row-level triggers and actions</li>
+            <li>Automated approval routing</li>
+            <li>Data-loss prevention policies</li>
+          </ul>
+        </article>
+        <article class="integration-card" data-category="communication">
+          <div class="logo">MSG</div>
+          <h3>Outreach &amp; notifications</h3>
+          <p>Send emails, push notifications, and SMS with Outlook, Twilio, Power Apps Push, and more.</p>
+          <ul>
+            <li>Conditionally send alerts by severity</li>
+            <li>Template-based messaging</li>
+            <li>Deep links to Power Apps</li>
+          </ul>
+        </article>
+        <article class="integration-card" data-category="productivity">
+          <div class="logo">SP</div>
+          <h3>SharePoint + OneDrive</h3>
+          <p>Watch libraries for new documents, kick off approvals, and archive results to long-term storage.</p>
+          <ul>
+            <li>Version-aware file processing</li>
+            <li>Metadata extraction with AI Builder</li>
+            <li>Route approvals to Teams channels</li>
+          </ul>
+        </article>
+        <article class="integration-card" data-category="devops">
+          <div class="logo">ADO</div>
+          <h3>Azure DevOps &amp; GitHub</h3>
+          <p>Automate work item creation, pull request checks, and deployment notifications for your engineering teams.</p>
+          <ul>
+            <li>Auto-assign bugs by service area</li>
+            <li>Deploy with environment gates</li>
+            <li>Post release notes to Teams</li>
+          </ul>
+        </article>
+        <article class="integration-card" data-category="data">
+          <div class="logo">BI</div>
+          <h3>Power BI &amp; Excel</h3>
+          <p>Refresh datasets, append rows, and react to data-driven alerts to keep dashboards current.</p>
+          <ul>
+            <li>Dataset refresh orchestration</li>
+            <li>Row-level inserts with templates</li>
+            <li>Trigger on data alerts</li>
+          </ul>
+        </article>
+        <article class="integration-card" data-category="communication">
+          <div class="logo">BOT</div>
+          <h3>Power Virtual Agents</h3>
+          <p>Let bots call flows to retrieve answers, create records, or start approvals during conversations.</p>
+          <ul>
+            <li>Pass context from bot topics</li>
+            <li>Return adaptive card responses</li>
+            <li>Support for multilingual bots</li>
+          </ul>
+        </article>
+        <article class="integration-card" data-category="devops">
+          <div class="logo">ALM</div>
+          <h3>ALM &amp; monitoring</h3>
+          <p>Use Azure Monitor, Application Insights, and the Admin Connector to track runs and enforce policies.</p>
+          <ul>
+            <li>Automated health alerts</li>
+            <li>Export run history to Log Analytics</li>
+            <li>Rotate secrets with Key Vault</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="bot-builder">
+      <div class="section__header">
+        <p class="eyebrow">Bot builder</p>
+        <h2>Build a Power Virtual Agents bot powered by flows</h2>
+        <p class="lede">Follow this blueprint to deliver a reliable bot with connected automations.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__step">1</div>
+          <div>
+            <h3>Design topics and triggers</h3>
+            <p>Create greeting, escalation, and FAQ topics. Add trigger phrases and entity recognition to guide users.</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__step">2</div>
+          <div>
+            <h3>Connect to flows</h3>
+            <p>Use the Power Automate action within your bot to call cloud flows that retrieve or update data.</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__step">3</div>
+          <div>
+            <h3>Secure with environments</h3>
+            <p>Choose the correct environment for production and apply data-loss prevention policies to connectors.</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__step">4</div>
+          <div>
+            <h3>Publish &amp; monitor</h3>
+            <p>Publish your bot, embed it in Teams, and monitor conversations, flow runs, and user satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--highlight">
+      <div class="highlight">
+        <div>
+          <p class="eyebrow">Get started quickly</p>
+          <h2>Template ideas for your next automation</h2>
+          <p class="lede">Start from proven scenarios and adapt them to your needs.</p>
+        </div>
+        <div class="chips">
+          <div class="chip chip--light">Auto-assign Teams messages to owners</div>
+          <div class="chip chip--light">Archive approved documents to SharePoint</div>
+          <div class="chip chip--light">Post release notes to Teams after deployments</div>
+          <div class="chip chip--light">Sync survey results to Dataverse with sentiment</div>
+          <div class="chip chip--light">Trigger RPA desktop script from chatbot</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <h2>Ready to automate?</h2>
+      <p>Sign in to Power Automate to build flows, manage connectors, and deploy bots.</p>
+    </div>
+    <div class="footer__actions">
+      <button class="btn btn--primary">Open Power Automate</button>
+      <button class="btn btn--ghost">Browse templates</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
